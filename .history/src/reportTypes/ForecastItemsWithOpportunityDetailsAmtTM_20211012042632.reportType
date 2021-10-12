@@ -477,12 +477,6 @@
             <field>Account.Type</field>
             <table>ForecastingItem.ForecastingFactOpps</table>
         </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <displayNameOverride>Year Started</displayNameOverride>
-            <field>Account.YearStarted</field>
-            <table>ForecastingItem.ForecastingFactOpps</table>
-        </columns>
         <masterLabel>Account Fields</masterLabel>
     </sections>
     <sections>
