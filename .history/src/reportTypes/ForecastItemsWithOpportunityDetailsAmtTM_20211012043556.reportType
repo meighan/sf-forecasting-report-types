@@ -356,11 +356,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Account.CleanStatus</field>
-            <table>ForecastingItem.ForecastingFactOpps</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <displayNameOverride>Account: Created By</displayNameOverride>
             <field>Account.CreatedBy</field>
             <table>ForecastingItem.ForecastingFactOpps</table>

@@ -525,12 +525,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <displayNameOverride>Clean Status</displayNameOverride>
-            <field>Account.CleanStatus</field>
-            <table>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <displayNameOverride>Account: Created By</displayNameOverride>
             <field>Account.CreatedBy</field>
             <table>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps</table>
