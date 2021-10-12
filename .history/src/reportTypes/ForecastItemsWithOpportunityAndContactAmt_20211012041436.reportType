@@ -3,21 +3,24 @@
     <baseObject>ForecastingItem</baseObject>
     <category>forecasts</category>
     <deployed>false</deployed>
-    <description>Viewing information about forecasting amounts, including adjustment amount information for amount Forecasting with Opportunity details.
-**Uses Ent. Territory Management w/ Opp Territory Section**</description>
+    <description>Viewing information about forecasting amounts, including adjustment amount information for Forecasts with Opportunity details. with Contact Role Contacts</description>
     <join>
+        <join>
+            <outerJoin>true</outerJoin>
+            <relationship>OpportunityContactRoles</relationship>
+        </join>
         <outerJoin>false</outerJoin>
         <relationship>ForecastingFactOpps</relationship>
     </join>
-    <label>Amount Forecast w/ Opportunity Details</label>
+    <label>Amount Forecast w/ Opp Details &amp; Contact Roles</label>
     <sections>
         <columns>
-            <checkedByDefault>false</checkedByDefault>
+            <checkedByDefault>true</checkedByDefault>
             <field>AmountWithoutAdjustments</field>
             <table>ForecastingItem</table>
         </columns>
         <columns>
-            <checkedByDefault>false</checkedByDefault>
+            <checkedByDefault>true</checkedByDefault>
             <field>AmountWithoutManagerAdjustment</field>
             <table>ForecastingItem</table>
         </columns>
@@ -32,7 +35,7 @@
             <table>ForecastingItem</table>
         </columns>
         <columns>
-            <checkedByDefault>true</checkedByDefault>
+            <checkedByDefault>false</checkedByDefault>
             <field>ForecastCategoryName</field>
             <table>ForecastingItem</table>
         </columns>
@@ -62,19 +65,13 @@
             <table>ForecastingItem</table>
         </columns>
         <columns>
-            <checkedByDefault>false</checkedByDefault>
+            <checkedByDefault>true</checkedByDefault>
             <field>IsAmount</field>
             <table>ForecastingItem</table>
         </columns>
         <columns>
             <checkedByDefault>true</checkedByDefault>
-            <displayNameOverride>Forecast Owner</displayNameOverride>
             <field>Owner</field>
-            <table>ForecastingItem</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>OwnerOnlyAmount</field>
             <table>ForecastingItem</table>
         </columns>
         <columns>
@@ -87,43 +84,43 @@
     <sections>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <displayNameOverride>Active</displayNameOverride>
+            <displayNameOverride>Owner: Active</displayNameOverride>
             <field>Owner.IsActive</field>
             <table>ForecastingItem</table>
         </columns>
         <columns>
-            <checkedByDefault>true</checkedByDefault>
-            <displayNameOverride>Division</displayNameOverride>
-            <field>Owner.Division</field>
-            <table>ForecastingItem</table>
-        </columns>
-        <columns>
             <checkedByDefault>false</checkedByDefault>
-            <displayNameOverride>E-mail</displayNameOverride>
-            <field>Owner.Email</field>
-            <table>ForecastingItem</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <displayNameOverride>First Name</displayNameOverride>
+            <displayNameOverride>Owner: First Name</displayNameOverride>
             <field>Owner.FirstName</field>
             <table>ForecastingItem</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <displayNameOverride>Last Name</displayNameOverride>
+            <displayNameOverride>Owner: Last Name</displayNameOverride>
             <field>Owner.LastName</field>
             <table>ForecastingItem</table>
         </columns>
         <columns>
-            <checkedByDefault>true</checkedByDefault>
-            <displayNameOverride>Manager</displayNameOverride>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Owner: Manager</displayNameOverride>
             <field>Owner.Manager</field>
             <table>ForecastingItem</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <displayNameOverride>Role</displayNameOverride>
+            <displayNameOverride>Owner: Division</displayNameOverride>
+            <field>Owner.Division</field>
+            <table>ForecastingItem</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Owner: E-mail</displayNameOverride>
+            <field>Owner.Email</field>
+            <table>ForecastingItem</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Owner Role</displayNameOverride>
             <field>Owner.UserRole</field>
             <table>ForecastingItem</table>
         </columns>
@@ -170,12 +167,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>IsExcludedFromTerritory2Filter</field>
+            <field>ExpectedRevenue</field>
             <table>ForecastingItem.ForecastingFactOpps</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>ExpectedRevenue</field>
+            <field>HasOpportunityLineItem</field>
             <table>ForecastingItem.ForecastingFactOpps</table>
         </columns>
         <columns>
@@ -250,6 +247,11 @@
             <table>ForecastingItem.ForecastingFactOpps</table>
         </columns>
         <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>TotalOpportunityQuantity</field>
+            <table>ForecastingItem.ForecastingFactOpps</table>
+        </columns>
+        <columns>
             <checkedByDefault>true</checkedByDefault>
             <field>StageName</field>
             <table>ForecastingItem.ForecastingFactOpps</table>
@@ -260,13 +262,7 @@
             <table>ForecastingItem.ForecastingFactOpps</table>
         </columns>
         <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Territory2</field>
-            <table>ForecastingItem.ForecastingFactOpps</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <displayNameOverride>Opportunity Type</displayNameOverride>
+            <checkedByDefault>true</checkedByDefault>
             <field>Type</field>
             <table>ForecastingItem.ForecastingFactOpps</table>
         </columns>
@@ -278,39 +274,279 @@
         <masterLabel>Opportunity Fields</masterLabel>
     </sections>
     <sections>
+        <masterLabel>Opportunity Custom</masterLabel>
+    </sections>
+    <sections>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <displayNameOverride>Territory ID</displayNameOverride>
-            <field>Territory2.Id</field>
-            <table>ForecastingItem.ForecastingFactOpps</table>
+            <field>Account</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <displayNameOverride>Parent Territory</displayNameOverride>
-            <field>Territory2.ParentTerritory2</field>
-            <table>ForecastingItem.ForecastingFactOpps</table>
+            <field>AssistantName</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <displayNameOverride>Territory Model</displayNameOverride>
-            <field>Territory2.Territory2Model</field>
-            <table>ForecastingItem.ForecastingFactOpps</table>
+            <field>AssistantPhone</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Birthdate</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CleanStatus</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Id</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Owner</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CreatedBy</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CreatedDate</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Jigsaw</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Department</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Description</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>DoNotCall</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>EmailBouncedDate</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>EmailBouncedReason</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>HasOptedOutOfEmail</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>HasOptedOutOfFax</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>FirstName</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
         </columns>
         <columns>
             <checkedByDefault>true</checkedByDefault>
-            <displayNameOverride>Territory Name</displayNameOverride>
-            <field>Territory2.DeveloperName</field>
-            <table>ForecastingItem.ForecastingFactOpps</table>
+            <field>Name</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Territory2.Territory2Type</field>
-            <table>ForecastingItem.ForecastingFactOpps</table>
+            <field>LastActivityDate</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
         </columns>
-        <masterLabel>Opportunity Territory</masterLabel>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastModifiedBy</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastModifiedDate</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastName</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastCURequestDate</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastCUUpdateDate</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LeadSource</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ReportsTo</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Role</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Salutation</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Title</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <masterLabel>Contact Fields</masterLabel>
     </sections>
     <sections>
-        <masterLabel>Opportunity Custom</masterLabel>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MailingAddress</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MailingCity</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MailingCountry</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MailingLatitude</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MailingLongitude</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MailingState</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MailingStreet</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MailingPostalCode</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>OtherAddress</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>OtherCity</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>OtherCountry</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>OtherLatitude</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>OtherLongitude</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>OtherPhone</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>OtherState</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>OtherStreet</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>OtherPostalCode</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <masterLabel>Contact Address</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Email</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Fax</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>HomePhone</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MobilePhone</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Phone</field>
+            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
+        </columns>
+        <masterLabel>Contact Ph/Fax/Email</masterLabel>
+    </sections>
+    <sections>
+        <masterLabel>Contact Custom</masterLabel>
     </sections>
     <sections>
         <columns>
@@ -356,11 +592,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Account.CleanStatus</field>
-            <table>ForecastingItem.ForecastingFactOpps</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <displayNameOverride>Account: Created By</displayNameOverride>
             <field>Account.CreatedBy</field>
             <table>ForecastingItem.ForecastingFactOpps</table>
@@ -373,21 +604,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Account.DandbCompany</field>
-            <table>ForecastingItem.ForecastingFactOpps</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Account.Jigsaw</field>
-            <table>ForecastingItem.ForecastingFactOpps</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Account.DunsNumber</field>
-            <table>ForecastingItem.ForecastingFactOpps</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <displayNameOverride>Account: Description</displayNameOverride>
             <field>Account.Description</field>
             <table>ForecastingItem.ForecastingFactOpps</table>
@@ -396,11 +612,6 @@
             <checkedByDefault>false</checkedByDefault>
             <displayNameOverride>Employees</displayNameOverride>
             <field>Account.NumberOfEmployees</field>
-            <table>ForecastingItem.ForecastingFactOpps</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Account.IsExcludedFromRealign</field>
             <table>ForecastingItem.ForecastingFactOpps</table>
         </columns>
         <columns>
@@ -429,16 +640,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Account.NaicsCode</field>
-            <table>ForecastingItem.ForecastingFactOpps</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Account.NaicsDesc</field>
-            <table>ForecastingItem.ForecastingFactOpps</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <displayNameOverride>Ownership</displayNameOverride>
             <field>Account.Ownership</field>
             <table>ForecastingItem.ForecastingFactOpps</table>
@@ -457,16 +658,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Account.Sic</field>
-            <table>ForecastingItem.ForecastingFactOpps</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Account.SicDesc</field>
-            <table>ForecastingItem.ForecastingFactOpps</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <displayNameOverride>Ticker Symbol</displayNameOverride>
             <field>Account.TickerSymbol</field>
             <table>ForecastingItem.ForecastingFactOpps</table>
@@ -478,7 +669,7 @@
             <table>ForecastingItem.ForecastingFactOpps</table>
         </columns>
         <columns>
-            <checkedByDefault>false</checkedByDefault>
+            <checkedByDefault>true</checkedByDefault>
             <displayNameOverride>Account Type</displayNameOverride>
             <field>Account.Type</field>
             <table>ForecastingItem.ForecastingFactOpps</table>
