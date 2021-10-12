@@ -616,12 +616,6 @@
     <sections>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <displayNameOverride>Tradestyle</displayNameOverride>
-            <field>Account.Tradestyle</field>
-            <table>ForecastingItem.ForecastingFactOpps</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <displayNameOverride>Year Started</displayNameOverride>
             <field>Account.YearStarted</field>
             <table>ForecastingItem.ForecastingFactOpps</table>

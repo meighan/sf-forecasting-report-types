@@ -334,11 +334,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>CleanStatus</field>
-            <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Id</field>
             <table>ForecastingItem.ForecastingFactOpps.OpportunityContactRoles</table>
         </columns>
@@ -695,12 +690,6 @@
             <checkedByDefault>false</checkedByDefault>
             <displayNameOverride>Ticker Symbol</displayNameOverride>
             <field>Account.TickerSymbol</field>
-            <table>ForecastingItem.ForecastingFactOpps</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <displayNameOverride>Tradestyle</displayNameOverride>
-            <field>Account.Tradestyle</field>
             <table>ForecastingItem.ForecastingFactOpps</table>
         </columns>
         <columns>

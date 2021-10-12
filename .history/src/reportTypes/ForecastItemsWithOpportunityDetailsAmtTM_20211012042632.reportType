@@ -473,12 +473,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <displayNameOverride>Tradestyle</displayNameOverride>
-            <field>Account.Tradestyle</field>
-            <table>ForecastingItem.ForecastingFactOpps</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <displayNameOverride>Account Type</displayNameOverride>
             <field>Account.Type</field>
             <table>ForecastingItem.ForecastingFactOpps</table>
