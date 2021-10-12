@@ -516,12 +516,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <displayNameOverride>D-U-N-S Number</displayNameOverride>
-            <field>Account.DunsNumber</field>
-            <table>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <displayNameOverride>Employees</displayNameOverride>
             <field>Account.NumberOfEmployees</field>
             <table>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps</table>

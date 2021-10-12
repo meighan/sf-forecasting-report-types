@@ -373,11 +373,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Account.DunsNumber</field>
-            <table>ForecastingItem.ForecastingFactOpps</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <displayNameOverride>Account: Description</displayNameOverride>
             <field>Account.Description</field>
             <table>ForecastingItem.ForecastingFactOpps</table>
