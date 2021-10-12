@@ -368,11 +368,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Account.DandbCompany</field>
-            <table>ForecastingItem.ForecastingFactOpps</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Account.Jigsaw</field>
             <table>ForecastingItem.ForecastingFactOpps</table>
         </columns>

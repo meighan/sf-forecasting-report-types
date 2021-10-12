@@ -537,12 +537,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <displayNameOverride>D&amp;B Company</displayNameOverride>
-            <field>Account.DandbCompany</field>
-            <table>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <displayNameOverride>Data.com Key</displayNameOverride>
             <field>Account.Jigsaw</field>
             <table>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps</table>
