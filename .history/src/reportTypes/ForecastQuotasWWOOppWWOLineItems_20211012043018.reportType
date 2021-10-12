@@ -546,18 +546,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <displayNameOverride>NAICS Code</displayNameOverride>
-            <field>Account.NaicsCode</field>
-            <table>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <displayNameOverride>NAICS Description</displayNameOverride>
-            <field>Account.NaicsDesc</field>
-            <table>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <displayNameOverride>Ownership</displayNameOverride>
             <field>Account.Ownership</field>
             <table>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps</table>

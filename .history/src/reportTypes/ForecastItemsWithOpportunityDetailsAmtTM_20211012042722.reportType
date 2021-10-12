@@ -414,16 +414,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Account.NaicsCode</field>
-            <table>ForecastingItem.ForecastingFactOpps</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Account.NaicsDesc</field>
-            <table>ForecastingItem.ForecastingFactOpps</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <displayNameOverride>Ownership</displayNameOverride>
             <field>Account.Ownership</field>
             <table>ForecastingItem.ForecastingFactOpps</table>
